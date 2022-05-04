@@ -1,0 +1,18 @@
+{
+  "name": "lunatic-example",
+  "version": "0.0.0",
+  "author": "TheHackerCoding",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "as-lunatic": "github:lunatic-solutions/as-lunatic#big-refactor",
+    "assemblyscript": "^0.18.31"
+  },
+  "scripts": {
+    "build:debug": "asc src/index.ts --target debug",
+    "build:release": "asc src/index.ts --target release",
+    "build:all": "yarn build:debug && yarn build:release",
+    "dev": "yarn build:debug && lunatic build/debug.wasm",
+    "prod": "yarn build:release && lunatic build/release.wasm"
+  }
+}
